@@ -6,6 +6,11 @@
 
 # Bài nộp LAB5 — [Track] · Nhóm [tên]
 [Danh sách thành viên và việc mỗi người làm — copy bảng từ README]
+| Họ và Tên | Mã Học Viên | Việc đã làm |
+|---|---|---|
+| Nguyễn Quốc Toàn | 2A202604098 | **§1:** chốt lát cắt, phạm vi và các tính năng không làm. **§3:** xây kịch bản K3, K6, đường đi happy path/failure/correction và câu trả lời AI. **§5:** phụ trách prototype `prototype/index.html`, các màn hình, mức tự chủ của tool, nhật ký Màn 2c và ảnh đánh số. **§7:** điều khiển prototype, trình bày ca K3 và phần hỏi đáp T1–T3; dự phòng thao tác ca K6. |
+| Bùi Phước Anh | 2A202604102 | **§2:** lập bảng rủi ro K1–K10, chọn K3/K6 và giải thích lỗi AI. **§4:** phụ trách bảng tool, quyền tự chủ, dữ liệu giả định và nguyên tắc an toàn/đạo đức. **§6:** phụ trách tiêu chí Pass/Fail T1–T3, các lỗi còn lại và cách đánh giá prototype. **§7:** dẫn nhập, trình bày ca K6, chuẩn bị ca lạ và trả lời câu hỏi về người bán, bằng chứng, hoàn tiền và các việc bị cấm; dự phòng thao tác ca K3. |
+
 
 ## §1. Lát cắt & phạm vi
 
@@ -372,7 +377,20 @@ Ba tiêu chí bám ba nỗi sợ của track: T1 — người bán đúng mà v�
 
 ### 7.1 Phân công trình bày 
 
+**Nguyên tắc chung:** Hai thành viên cùng đọc và nắm toàn bộ §1–§7, đặc biệt K3, K6, T1–T3 và bảng mức tự chủ. Người phụ trách thao tác phải nói rõ *AI đã gọi/không gọi tool nào, vì sao, ai là người quyết định*; người còn lại có thể tiếp lời khi bị hỏi và sẵn sàng thao tác thay.
 
+| Thời lượng | Người trình bày | Nội dung và thao tác bắt buộc | Điểm cần trả lời nếu bị hỏi |
+|---|---|---|---|
+| 0:00–0:30 | **Phước Anh** | Giới thiệu lát cắt §1: người mua báo hàng không đúng mô tả; chỉ rõ nhãn ① “AI hướng dẫn và thu thập bằng chứng, không tự quyết hoàn tiền”. Nêu nhanh phạm vi không làm: không phạt/khoá shop, không lấy SĐT/địa chỉ, không tự hứa hoàn tiền. | Vì sao không cho AI phạt shop hoặc đưa SĐT: ngoài phạm vi, ảnh hưởng khó đảo và vi phạm an toàn dữ liệu. |
+| 0:30–2:00 | **Phước Anh** (Nguyễn Quốc Toàn dự phòng) | Chạy **ca K6**: gửi tin người mua → chỉ rõ AI chưa đủ căn cứ → xin đúng bằng chứng còn thiếu → chờ/huỷ thao tác gửi 10 giây → chuyển sang màn người bán → xem ảnh mới → Màn 2b nhân viên tick 2 ô xác nhận → mở nhật ký Màn 2c. | K6 không được tự hoàn tiền vì `soan_hoan_tien` cần nhân viên duyệt; người bán được nghe và có 48 giờ phản hồi; ảnh phải có nhãn nguồn; nhật ký phải ghi cả `soan_hoan_tien` không được gọi trước khi duyệt. |
+| 2:00–3:00 | **Nguyễn Quốc Toàn** (Phước Anh dự phòng) | Chạy **ca K3**: chỉ ra `xem_mo_ta_luc_dat` trả “không có bản lưu” → nút “Từ chối” bị khoá → chuyển trưởng nhóm → nhân viên tra lịch sử chỉnh sửa → mở lại hướng xử lý. Hiện ảnh `anh-2-ca-K3.png` và nhật ký. | Không được kết luận dựa trên mô tả hiện tại; không bắt người mua phải tự chứng minh; `chuyen_truong_nhom` là đường lui vì chỉ hệ thống/nhân viên mới kiểm tra được lịch sử. Khiếu nại vẫn mở, không tự từ chối. |
+| 3:00–4:00 | **Cả hai** — Phước Anh hỏi đáp nghiệp vụ, Nguyễn Quốc Toàn thao tác | Xử lý một ca lạ do người xem chọn: ưu tiên “khoá shop/hàng giả” hoặc “hoàn luôn đi”; bật “Hiện số đánh dấu” nếu cần để chỉ ra ⑧/⑨/⑪. Chốt lại ba tiêu chí Pass/Fail T1–T3. | `phat_shop` là **cấm**, chỉ hướng dẫn báo bộ phận chuyên trách; “hoàn luôn” vẫn phải qua nhân viên; mọi câu “đã làm/sẽ làm/hạn” phải có dòng nhật ký hoặc luật §4 làm căn cứ. |
+
+**Phân công chuẩn bị và dự phòng:**
+
+- Nguyễn Quốc Toàn kiểm tra trước khi demo: mở `prototype/index.html`, reset được cả K3/K6, bật/tắt số đánh dấu, chỉ đúng ảnh và Màn 2c; nếu Phước Anh gặp lỗi thao tác thì tiếp quản K6.
+- Phước Anh kiểm tra trước khi demo: thuộc câu trả lời cho K1–K10 và bảng tool, chuẩn bị câu hỏi ca lạ, kiểm tra luồng người bán và hai ô xác nhận; nếu Nguyễn Quốc Toàn gặp lỗi thao tác thì tiếp quản K3.
+- Cả hai cùng kiểm tra 3 lỗi không được nói trong demo: AI tự hoàn tiền, kết luận theo mô tả hiện tại ở K3, và hứa mốc thời gian không có căn cứ. 
 
 ### 7.2 Chuẩn bị sẵn cho ca lạ
 
